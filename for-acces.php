@@ -1,22 +1,16 @@
 <?php
 /**
- * The plugin For access
- *
- * @link              https://dima.minka
- * @since             1.0.0
- * @package           OCA
- *
- * @wordpress-plugin
  * Plugin Name:       OCA
- * Plugin URI:        https://dima.minka
- * Description:       OCA
- * Version:           1.0.0
+ * Description:       OCA plugin is the helper for One Click Accessibility plugin.
+ * Plugin URI:        https://cdk.co.il
  * Author:            Dima Minka
- * Author URI:        https://dima.minka
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * Author             URI: https://dimaminka.com
+ * Version:           1.0.0
+ * License:           GPLv2 or later
  * Text Domain:       oca
  * Domain Path:       /lang
+ *
+ * @package OCA
  */
 
 $admin_page_name = 'oca-main';
@@ -171,8 +165,7 @@ function true_validate_settings( $input ) {
 /**
  * one-click - pojo-accessibility Before button
  */
-function pojo_toolbar_before_buttons_output()
-{
+function pojo_toolbar_before_buttons_output() {
 	$options = get_option( 'oca_access_options_1' );
 	ob_start();
 	?>
@@ -198,8 +191,7 @@ add_action( 'pojo_a11y_toolbar_before_buttons', 'pojo_toolbar_before_buttons_out
 /**
  * one-click - pojo-accessibility After button
  */
-function pojo_toolbar_after_buttons_output ()
-{
+function pojo_toolbar_after_buttons_output() {
 	$options = get_option( 'oca_options_2' );
 
 	ob_start();
