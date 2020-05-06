@@ -33,6 +33,16 @@ function add_oca_menu_page() {
 
 add_action( 'admin_menu', 'add_oca_menu_page', 99 );
 
+function oca_load_plugin_textdomain() {
+	load_plugin_textdomain(
+	        'oca',
+            false,
+            dirname( plugin_basename( __FILE__ ) ) . '/lang/'
+    );
+}
+
+add_action( 'plugins_loaded', 'oca_load_plugin_textdomain' );
+
 /**
  * View fields
  */
