@@ -197,19 +197,22 @@ function true_validate_settings( $input ) {
  */
 function pojo_toolbar_before_buttons_output() {
 	$options = get_option( 'oca_access_options_1' );
-	ob_start();
-	?>
-    <li class="pojo-a11y-toolbar-item">
-        <a
-                href="<?php echo $options['src_1']; ?>">
+
+	if (!empty($options['src_1'])) {
+		ob_start();
+		?>
+        <li class="pojo-a11y-toolbar-item">
+            <a
+                    href="<?php echo $options['src_1']; ?>">
             <span class="pojo-a11y-toolbar-icon">
                 <?php echo icon1(); ?>
             </span>
-            <span class="pojo-a11y-toolbar-text"><?php echo $options['text_1']; ?></span>
-        </a>
-    </li>
-	<?php
-	echo ob_get_clean();
+                <span class="pojo-a11y-toolbar-text"><?php echo $options['text_1']; ?></span>
+            </a>
+        </li>
+		<?php
+		echo ob_get_clean();
+    }
 }
 
 add_action( 'pojo_a11y_toolbar_before_buttons', 'pojo_toolbar_before_buttons_output' );
@@ -220,19 +223,21 @@ add_action( 'pojo_a11y_toolbar_before_buttons', 'pojo_toolbar_before_buttons_out
 function pojo_toolbar_after_buttons_output() {
 	$options = get_option( 'oca_options_2' );
 
-	ob_start();
-	?>
-    <li class="pojo-a11y-toolbar-item">
-        <a
-                href="<?php echo $options['src_2']; ?>">
+	if (!empty($options['src_2'])) {
+		ob_start();
+		?>
+        <li class="pojo-a11y-toolbar-item">
+            <a
+                    href="<?php echo $options['src_2']; ?>">
             <span class="pojo-a11y-toolbar-icon">
                 <?php echo icon2(); ?>
             </span>
-            <span class="pojo-a11y-toolbar-text"><?php echo $options['text_2']; ?></span>
-        </a>
-    </li>
-	<?php
-	echo ob_get_clean();
+                <span class="pojo-a11y-toolbar-text"><?php echo $options['text_2']; ?></span>
+            </a>
+        </li>
+		<?php
+		echo ob_get_clean();
+    }
 }
 
 add_action( 'pojo_a11y_toolbar_after_buttons', 'pojo_toolbar_after_buttons_output' );
